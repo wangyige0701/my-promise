@@ -82,9 +82,7 @@ class MyPromise {
 		} else {
 			const settled = state === STATE.FULFILLED ? resolve : reject;
 			this.#thenable(
-				(e) => {
-					settled(e);
-				},
+				(e) => settled(e),
 				resolve,
 				reject,
 				state
